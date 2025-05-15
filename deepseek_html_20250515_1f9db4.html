@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doğadaki Mühendislik Harikaları</title>
+    <style>
+        :root {
+            --color1: #2c3e50;
+            --color2: #3498db;
+            --color3: #e74c3c;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(-45deg, var(--color1), var(--color2), var(--color3));
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .category {
+            background: rgba(255,255,255,0.9);
+            border-radius: 15px;
+            margin: 15px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .category:hover {
+            transform: translateY(-3px);
+        }
+
+        .category-header {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .category-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .arrow {
+            transition: transform 0.3s ease;
+            font-size: 1.2em;
+        }
+
+        .links-container {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: rgba(245,245,245,0.9);
+        }
+
+        .link-item {
+            padding: 15px 25px;
+            border-top: 1px solid #eee;
+            transition: background 0.2s ease;
+        }
+
+        .link-item:hover {
+            background: rgba(200,200,200,0.2);
+        }
+
+        .link-item a {
+            text-decoration: none;
+            color: #3498db;
+            display: block;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .link-item a::before {
+            content: "➤";
+            position: absolute;
+            left: 0;
+            color: #e74c3c;
+            transition: transform 0.2s ease;
+        }
+
+        .link-item a:hover::before {
+            transform: translateX(5px);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 0 10px;
+            }
+            .category-header {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Protistler -->
+        <div class="category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <span class="category-title">Protistler</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="links-container">
+                <div class="link-item">
+                    <a href="https://tr.m.wikipedia.org/wiki/Protistler" target="_blank">Wikipedia - Protistler (Türkçe)</a>
+                </div>
+                <div class="link-item">
+                    <a href="https://en.m.wikipedia.org/wiki/Protist" target="_blank">Wikipedia - Protists (İngilizce)</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Deniz Yıldızları -->
+        <div class="category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <span class="category-title">Deniz Yıldızları</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="links-container">
+                <div class="link-item">
+                    <a href="https://yelkenokulu.com/deniz-canlilari/denzizyildizi/" target="_blank">Yelken Okulu - Denizyıldızı</a>
+                </div>
+                <div class="link-item">
+                    <a href="https://tr.m.wikipedia.org/wiki/Denizy%C4%B1ld%C4%B1z%C4%B1#:~:text=Denizy%C4%B1ld%C4%B1z%C4%B1%2C%20hayvanlar%20%C3%A2leminin%20derisi%20dikenliler,1.500%20kadar%20denizy%C4%B1ld%C4%B1z%C4%B1%20t%C3%BCr%C3%BC%20bulunur." target="_blank">Wikipedia - Denizyıldızı</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pangolinler -->
+        <div class="category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <span class="category-title">Pangolinler</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="links-container">
+                <div class="link-item">
+                    <a href="https://kulturveyasam.com/zirhli-derisi-ve-diger-ilginc-ozellikleriyle-pangolinler/" target="_blank">Zırhlı Derisi ve Diğer İlginç Özellikleriyle Pangolinler</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kar Taneleri -->
+        <div class="category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <span class="category-title">Kar Taneleri</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="links-container">
+                <div class="link-item">
+                    <a href="https://bilimgenc.tubitak.gov.tr/makale/kar-taneleri" target="_blank">TÜBİTAK - Kar Taneleri</a>
+                </div>
+                <div class="link-item">
+                    <a href="https://evrenatlasi.com.tr/kultur/kar-taneleri/" target="_blank">Evren Atlası - Kar Taneleri</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bal Petekleri -->
+        <div class="category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <span class="category-title">Bal Petekleri</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="links-container">
+                <div class="link-item">
+                    <a href="https://www.atlasdergisi.com/kesfet/doga-cografya-haberleri/muhendislik-harikalari-bal-petekleri.html" target="_blank">Atlas Dergisi - Mühendislik Harikaları: Bal Petekleri</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kaplumbağa Kabukları -->
+        <div class="category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <span class="category-title">Kaplumbağa Kabukları</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="links-container">
+                <div class="link-item">
+                    <a href="https://en.m.wikipedia.org/wiki/Turtle_shell" target="_blank">Wikipedia - Turtle Shell</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleCategory(header) {
+            const category = header.parentElement;
+            const linksContainer = category.querySelector('.links-container');
+            const arrow = header.querySelector('.arrow');
+            
+            if(linksContainer.style.maxHeight){
+                linksContainer.style.maxHeight = null;
+                arrow.style.transform = 'rotate(0deg)';
+            } else {
+                linksContainer.style.maxHeight = linksContainer.scrollHeight + "px";
+                arrow.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Renk geçiş animasyonu
+        setInterval(() => {
+            const hue1 = Math.floor(Math.random() * 360);
+            const hue2 = (hue1 + 120) % 360;
+            const hue3 = (hue1 + 240) % 360;
+            
+            document.documentElement.style.setProperty('--color1', `hsl(${hue1}, 50%, 30%)`);
+            document.documentElement.style.setProperty('--color2', `hsl(${hue2}, 70%, 50%)`);
+            document.documentElement.style.setProperty('--color3', `hsl(${hue3}, 70%, 50%)`);
+        }, 15000);
+    </script>
+</body>
+</html>
